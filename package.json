@@ -24,15 +24,9 @@
     "!**/__mocks__"
   ],
   "scripts": {
-    "test": "jest",
     "typescript": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "build": "bob build",
-    "prepublishOnly": "bob build",
-    "release": "release-it",
     "example": "yarn --cwd example",
-    "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn"
   },
   "keywords": [
     "react-native",
@@ -53,80 +47,19 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@react-native-community/eslint-config": "^3.2.0",
-    "@types/jest": "^30.0.0",
     "@types/react": "~18.3.12",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
-    "jest": "^30.0.5",
-    "pod-install": "^1.0.1",
-    "prettier": "^3.6.2",
     "react": "18.3.1",
     "react-native": "0.76.5",
-    "react-native-builder-bob": "^0.29.0",
-    "release-it": "^17.10.0",
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
   },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native-community",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
-  "react-native": {
+  "react-native-config": {
     "android": {
       "sourceDir": "../node_modules/react-native-custom-youtube-player/android/",
       "packageImportPath": "import com.youtubevp.YoutubePlayerPackage;"
     }
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
   }
 }
