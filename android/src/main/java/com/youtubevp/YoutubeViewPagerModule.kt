@@ -6,10 +6,10 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.Arguments
 
-class YoutubePlayerModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
+class YoutubeViewPagerModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
     override fun getName(): String {
-        return "YoutubePlayerModule"
+        return "YoutubeViewPagerModule"
     }
 
     @ReactMethod

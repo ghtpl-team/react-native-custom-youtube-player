@@ -8,10 +8,10 @@ import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
 
-class YoutubePlayerViewManager(private val reactContext: ReactApplicationContext) : SimpleViewManager<YoutubePlayerView>() {
+class YoutubeViewPagerViewManager(private val reactContext: ReactApplicationContext) : SimpleViewManager<YoutubePlayerView>() {
 
     companion object {
-        const val REACT_CLASS = "YoutubePlayerView"
+        const val REACT_CLASS = "YoutubeViewPagerView"
         
         // Event names
         const val EVENT_ON_VIDEO_READY = "onVideoReady"

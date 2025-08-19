@@ -5,7 +5,7 @@ export interface VideoInfo {
   embedUrl: string;
 }
 
-export interface YoutubePlayerProps {
+export interface YoutubeViewPagerProps {
   videoUrl: string;
   autoPlay?: boolean;
   showControls?: boolean;
@@ -24,7 +24,7 @@ export interface YoutubePlayerProps {
   onFullscreenExit?: () => void;
 }
 
-export interface YoutubePlayerRef {
+export interface YoutubeViewPagerRef {
   playVideo: () => void;
   pauseVideo: () => void;
   stopVideo: () => void;
@@ -34,7 +34,7 @@ export interface YoutubePlayerRef {
   getVideoId: () => Promise<string | null>;
 }
 
-export interface YoutubePlayerModule {
+export interface YoutubeViewPagerModule {
   extractVideoId: (url: string) => Promise<string | null>;
   generateThumbnailUrl: (videoId: string) => Promise<string>;
   validateYoutubeUrl: (url: string) => Promise<boolean>;
@@ -50,3 +50,8 @@ export interface YoutubePlayerModule {
     MAX: string;
   };
 }
+
+// Keep backward compatibility aliases
+export type YoutubePlayerProps = YoutubeViewPagerProps;
+export type YoutubePlayerRef = YoutubeViewPagerRef;
+export type YoutubePlayerModule = YoutubeViewPagerModule;
