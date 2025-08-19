@@ -1,0 +1,130 @@
+{
+  "name": "react-native-custom-youtube-player",
+  "version": "1.0.0",
+  "description": "React Native wrapper for custom YouTube player with native Android implementation",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "react-native-youtube-viewpager.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!android/.cxx",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepare": "bob build",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "pods": "cd example && pod-install --quiet",
+    "bootstrap": "yarn example && yarn && yarn pods"
+  },
+  "keywords": [
+    "react-native",
+    "youtube",
+    "video",
+    "player",
+    "android",
+    "custom"
+  ],
+  "repository": "https://github.com/ghtpl-team/react-native-custom-youtube-player",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghtpl-team/react-native-custom-youtube-player/issues"
+  },
+  "homepage": "https://github.com/ghtpl-team/react-native-custom-youtube-player#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/react": "~18.3.12",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "jest": "^30.0.5",
+    "pod-install": "^1.0.1",
+    "prettier": "^3.6.2",
+    "react": "18.3.1",
+    "react-native": "0.76.5",
+    "release-it": "^17.10.0",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native-community",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native": {
+    "android": {
+      "sourceDir": "../node_modules/react-native-custom-youtube-player/android/",
+      "packageImportPath": "import com.youtubevp.YoutubePlayerPackage;"
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "react-native-builder-bob": "^0.40.13"
+  }
+}
