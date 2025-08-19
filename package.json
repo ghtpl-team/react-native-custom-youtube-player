@@ -24,7 +24,8 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "bob build",
+    "build": "bob build",
+    "prepublishOnly": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
@@ -60,6 +61,7 @@
     "prettier": "^3.6.2",
     "react": "18.3.1",
     "react-native": "0.76.5",
+    "react-native-builder-bob": "^0.40.13",
     "release-it": "^17.10.0",
     "typescript": "^5.7.3"
   },
@@ -123,8 +125,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "react-native-builder-bob": "^0.40.13"
   }
 }
