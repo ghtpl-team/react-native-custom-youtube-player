@@ -14,6 +14,7 @@
     "src",
     "lib",
     "android",
+    "react-native.config.js",
     "react-native-youtube-viewpager.podspec",
     "!lib/typescript/example",
     "!android/build",
@@ -56,10 +57,9 @@
     "react": "*",
     "react-native": "*"
   },
-  "react-native-config": {
-    "android": {
-      "sourceDir": "../node_modules/react-native-custom-youtube-player/android/",
-      "packageImportPath": "import com.youtubevp.YoutubePlayerPackage;"
-    }
+  "codegenConfig": {
+    "name": "RNYoutubeViewPagerSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
   }
 }

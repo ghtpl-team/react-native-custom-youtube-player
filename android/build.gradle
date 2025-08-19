@@ -5,8 +5,8 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.android.tools.build:gradle:7.2.1"
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
+    classpath "com.android.tools.build:gradle:8.0.2"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10"
   }
 }
 
@@ -119,7 +119,7 @@ repositories {
   }
 
   if (!found) {
-    throw new GradleException(
+    throw new RuntimeException(
       "${project.name}: unable to locate React Native android sources. " +
         "Ensure you have you installed React Native as a dependency in your project and try again."
     )
